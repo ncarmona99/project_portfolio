@@ -1,0 +1,3 @@
+This project portfolio is a website created with the intention of demonstrate my programming skills and knowledge using Nuxt 3 (HTML+CSS+JS), talwind, routing, structure, etc.
+
+Project developed with Nuxt 3, Tailwind, Pinia, API consumption, Supabase, i18n...
