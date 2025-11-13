@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 @layer components {
+  :root {
+    --logo-color-primary-light: #ff6d00;
+    --logo-color-secondary-light: #ff9100;
+    --logo-color-primary-dark: #ffffff;
+    --bg-color-primary-light: #f4f4f4;
+    --bg-color-secondary-light: #e0e0e0;
+    --nav-text-color-light: #ffbe0b;
+  }
   .logo-animado:hover {
     transform-origin: 50% 50%;
     animation: pop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -21,5 +29,20 @@
     100% {
       transform: scale(1);
     }
+  }
+  .logo-light-primary {
+    fill: var(--logo-color-primary-light);
+  }
+  .logo-light-secondary {
+    fill: var(--logo-color-secondary-light);
+  }
+  .bg-primary {
+    background-color: var(--bg-color-primary-light);
+  }
+  .bg-secondary {
+    background-color: var(--bg-color-secondary-light);
+  }
+  .nav-text-color {
+    color: var(--logo-color-primary-light);
   }
 }
