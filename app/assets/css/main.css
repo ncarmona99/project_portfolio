@@ -16,7 +16,19 @@
     transform-origin: 50% 50%;
     animation: pop-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
+  .animating .pieza2 {
+    transform-origin: 50% 50%;
+    animation: pop-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 
+  .animating .pieza3 {
+    transform-origin: 50% 50%;
+    animation: pop-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+ .animating .pieza4{
+    transform-origin: 50% 50%;
+    animation: pop-special 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
   @keyframes pop-up {
     0% {
       transform: translateY(-200px);
@@ -29,15 +41,6 @@
     100% {
       transform: translateY(0px);
     }
-  }
-    .animating .pieza2 {
-    transform-origin: 50% 50%;
-    animation: pop-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  .animating .pieza3 {
-    transform-origin: 50% 50%;
-    animation: pop-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
   @keyframes pop-down {
     0% {
@@ -64,10 +67,6 @@
     100% {
       transform: translateX(0px);
     }
-  }
- .animating .pieza4{
-    transform-origin: 50% 50%;
-    animation: pop-special 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
   @keyframes pop-special {
     0% {
