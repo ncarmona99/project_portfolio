@@ -9,27 +9,80 @@
     --bg-color-secondary-light: #e0e0e0;
     --nav-text-color-light: #ffbe0b;
   }
-  .logo-animado:hover {
+  .logo-wrapper{
+    cursor: auto;
+  }
+  .animating .pieza1 {
     transform-origin: 50% 50%;
-    animation: pop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: pop-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  @keyframes pop {
+  @keyframes pop-up {
     0% {
-      transform: scale(1);
+      transform: translateY(-200px);
       opacity: 1;
     }
     50% {
-      transform: scale(1.2);
+      transform: translateY(-300px);
       opacity: 1;
     }
-    75% {
-      transform: scale(0.95);
-    }
     100% {
-      transform: scale(1);
+      transform: translateY(0px);
     }
   }
+    .animating .pieza2 {
+    transform-origin: 50% 50%;
+    animation: pop-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .animating .pieza3 {
+    transform-origin: 50% 50%;
+    animation: pop-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  @keyframes pop-down {
+    0% {
+      transform: translateY(200px);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(300px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+    @keyframes pop-right {
+    0% {
+      transform: translateX(200px);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(300px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+ .animating .pieza4{
+    transform-origin: 50% 50%;
+    animation: pop-special 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  @keyframes pop-special {
+    0% {
+      transform: translateY(100px);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(200px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
   .logo-light-primary {
     fill: var(--logo-color-primary-light);
   }

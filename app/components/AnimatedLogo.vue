@@ -1,15 +1,41 @@
+<script setup>
+import { ref } from "vue";
+const animating = ref(false);
+let timeoutId = null;
+const onMouseEnter = () => {
+  animating.value = false;
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+  }
+  requestAnimationFrame(() => {
+    animating.value = true;
+    timeoutId = setTimeout(() => {
+      animating.value = false;
+    }, 600);
+  });
+};
+requestAnimationFrame(() => {
+  animating.value = true;
+  timeoutId = setTimeout(() => {
+    animating.value = false;
+  }, 600);
+});
+</script>
+
 <template>
-  <div class="logo-animado px-10">
+  <div class="px-10">
     <svg
       id="Capa_1"
       data-name="Capa 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1949.38 1218.9"
-      class="h-12 w-auto"
+      class="h-12 w-auto logo-wrapper"
+      :class="{ animating: animating }"
+      @mouseenter="onMouseEnter"
     >
       <g>
         <path
-          class="logo-light-primary"
+          class="pieza1 logo-light-primary"
           d="M27.04,220.83v706.23c0,9.73,7.89,17.62,17.62,17.62h201.06c9.73,0,17.62-7.89,17.62-17.62V253.93c0-9.73,7.88-17.62,17.62-17.62h83.4c9.73,0,17.62,7.89,17.62,17.62v82.63c0,9.73,7.89,17.62,17.62,17.62h199.84c9.73,0,17.62-7.89,17.62-17.62V17.63C617.07,7.89,609.18,0,599.45,0L247.69.12C125.81.15,27.04,98.96,27.04,220.83Z"
         />
         <rect
@@ -22,15 +48,15 @@
           ry="5.37"
         />
         <path
-          class="logo-light-primary"
+          class="pieza2 logo-light-primary"
           d="M971.35,723.85V17.62C971.35,7.89,963.46,0,953.73,0h-201.06c-9.73,0-17.62,7.89-17.62,17.62v673.13c0,9.73-7.88,17.62-17.62,17.62h-83.4c-9.73,0-17.62-7.89-17.62-17.62v-82.63c0-9.73-7.89-17.62-17.62-17.62h-199.84c-9.73,0-17.62,7.89-17.62,17.62v318.94c0,9.74,7.89,17.63,17.63,17.62l351.76-.11c121.87-.04,220.65-98.85,220.65-220.72Z"
         />
         <path
-          class="logo-light-secondary"
+          class="pieza1 logo-light-secondary"
           d="M1090.81,631.78l.71-416.27c.2-119.09,96.8-215.52,215.88-215.52h592.9c9.73,0,17.62,7.89,17.62,17.62v201.06c0,9.73-7.89,17.62-17.62,17.62h-555.99c-9.72,0-17.6,7.86-17.62,17.58l-1,377.98c-.03,9.72-7.91,17.58-17.62,17.58h-199.62c-9.75,0-17.64-7.91-17.62-17.65Z"
         />
         <rect
-          class="logo-light-secondary"
+          class="pieza3 logo-light-secondary"
           x="1386.17"
           y="708.38"
           width="531.75"
@@ -43,7 +69,7 @@
           d="M1110.49,708.38h198.25c9.73,0,17.62,7.89,17.62,17.62v201.06c0,9.73-7.89,17.62-17.63,17.62h0c-119.61,0-216.42-97.25-215.88-216.86v-1.9c.05-9.7,7.93-17.54,17.63-17.54Z"
         />
       </g>
-      <g class="logo-light-primary">
+      <g class="pieza4 logo-light-primary">
         <g>
           <path
             d="M36.9,1025.26l58.47,145.7v-145.7h29.24v193.63h-41.94l-53.68-129.89v129.89H0v-193.63h36.9Z"
