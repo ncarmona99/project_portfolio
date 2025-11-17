@@ -48,16 +48,16 @@
       </div>
     </header>
 
-    <main class="bg-primary flex-1 p-4">
+    <main>
       <slot />
     </main>
 
-    <footer class="bg-secondary text-center text-black p-10 mt-auto">
+    <footer class="bg-secondary text-center text-black p-5 mt-auto">
       <div class="grid grid-cols-3 gap-4">
         <p class="">© {{ new Date().getFullYear() }} Nicolás Carmona</p>
         <div class="flex justify-center">
-          <p class="">Created by</p>
-          <p class="">Nicolás</p>
+          <p class="pr-1">Website created by</p>
+          <p class="pr-1">Nicolás</p>
           <p class="">Carmona</p>
         </div>
       </div>
