@@ -6,9 +6,7 @@ definePageMeta({
 </script>
 <template>
   <section class="max-w-6xl mx-auto px-4 md:pt-24 pt-16">
-    <h1
-      class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
-    >
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">
       Hola, soy Nicolás Carmona
     </h1>
 

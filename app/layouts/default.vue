@@ -53,12 +53,19 @@
     </main>
 
     <footer class="bg-secondary text-center text-black p-5 mt-auto">
-      <div class="grid grid-cols-3 gap-4">
-        <p class="">© {{ new Date().getFullYear() }} Nicolás Carmona</p>
-        <div class="flex justify-center">
+      <div class="grid grid-cols-3 gap-4 items-center">
+        <p>© {{ new Date().getFullYear() }} Nicolás Carmona</p>
+        <div class="flex justify-center align-middle">
           <p class="pr-1">Website created by</p>
           <p class="pr-1">Nicolás</p>
           <p class="">Carmona</p>
+        </div>
+        <div class="flex justify-center">
+          <div class="grid grid-rows-3">
+            <div>Github logo</div>
+            <div>LinkedIn logo</div>
+            <div>Mail contact</div>
+          </div>
         </div>
       </div>
     </footer>
