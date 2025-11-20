@@ -9,7 +9,7 @@
     --bg-color-secondary-light: #e0e0e0;
     --nav-text-color-light: #ffbe0b;
   }
-  .logo-wrapper{
+  .logo-wrapper {
     cursor: auto;
   }
   .animating .pieza1 {
@@ -25,7 +25,7 @@
     transform-origin: 50% 50%;
     animation: pop-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
- .animating .pieza4{
+  .animating .pieza4 {
     transform-origin: 50% 50%;
     animation: pop-special 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
@@ -55,7 +55,7 @@
       transform: translateY(0px);
     }
   }
-    @keyframes pop-right {
+  @keyframes pop-right {
     0% {
       transform: translateX(200px);
       opacity: 1;
@@ -97,4 +97,14 @@
   .nav-text-color {
     color: var(--logo-color-primary-light);
   }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
 }
