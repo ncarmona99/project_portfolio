@@ -8,6 +8,8 @@
     --bg-color-primary-light: #f4f4f4;
     --bg-color-secondary-light: #e0e0e0;
     --nav-text-color-light: #ffbe0b;
+    --button-bg-light: #ff9100;
+    --button-accent-light: #ff6d00;
   }
   .logo-wrapper {
     cursor: auto;
@@ -96,6 +98,18 @@
   }
   .nav-text-color {
     color: var(--logo-color-primary-light);
+  }
+  .bg-logo-light-primary {
+    background-color: var(--logo-color-primary-light);
+  }
+  .bg-logo-light-secondary {
+    background-color: var(--logo-color-secondary-light);
+  }
+  .bg-button-light {
+    background-color: var(--button-bg-light);
+  }
+  .bg-button-light:hover {
+    background-color: var(--button-accent-light);
   }
 }
 
