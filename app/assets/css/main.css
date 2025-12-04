@@ -2,14 +2,22 @@
 
 @layer components {
   :root {
-    --logo-color-primary-light: #ff6d00;
-    --logo-color-secondary-light: #ff9100;
-    --logo-color-primary-dark: #ffffff;
-    --bg-color-primary-light: #f4f4f4;
-    --bg-color-secondary-light: #e0e0e0;
-    --nav-text-color-light: #ffbe0b;
-    --button-bg-light: #ff9100;
-    --button-accent-light: #ff6d00;
+    --logo-color-primary: #ff6d00;
+    --logo-color-secondary: #ff9100;
+    --bg-color-primary: #f4f4f4;
+    --bg-color-secondary: #e0e0e0;
+    --nav-text-color: #ffbe0b;
+    --button-bg: #ff9100;
+    --button-accent: #ff6d00;
+  }
+  .dark {
+    --logo-color-primary: #240046;
+    --logo-color-secondary: #5a199b;
+    --bg-color-primary: #313131;
+    --bg-color-secondary: #646464;
+    --nav-text-color: #66049e;
+    --button-bg: #5a199b;
+    --button-accent: #240046;
   }
   .logo-wrapper {
     cursor: auto;
@@ -85,31 +93,31 @@
   }
 
   .logo-light-primary {
-    fill: var(--logo-color-primary-light);
+    fill: var(--logo-color-primary);
   }
   .logo-light-secondary {
-    fill: var(--logo-color-secondary-light);
+    fill: var(--logo-color-secondary);
   }
   .bg-primary {
-    background-color: var(--bg-color-primary-light);
+    background-color: var(--bg-color-primary);
   }
   .bg-secondary {
-    background-color: var(--bg-color-secondary-light);
+    background-color: var(--bg-color-secondary);
   }
   .nav-text-color {
-    color: var(--logo-color-primary-light);
+    color: var(--logo-color-primary);
   }
   .bg-logo-light-primary {
-    background-color: var(--logo-color-primary-light);
+    background-color: var(--logo-color-primary);
   }
   .bg-logo-light-secondary {
-    background-color: var(--logo-color-secondary-light);
+    background-color: var(--logo-color-secondary);
   }
   .bg-button-light {
-    background-color: var(--button-bg-light);
+    background-color: var(--button-bg);
   }
   .bg-button-light:hover {
-    background-color: var(--button-accent-light);
+    background-color: var(--button-accent);
   }
 }
 

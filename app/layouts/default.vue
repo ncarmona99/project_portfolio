@@ -5,11 +5,11 @@
     <header>
       <div class="flex flex-row justify-center">
         <nav
-          class="sticky top-0 mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium my-5 rounded-xl shadow-xl bg-neutral-900 text-white text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2"
+          class="sticky top-0 mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium my-5 rounded-xl shadow-xl shadow-orange-300/50 dark:shadow-purple-500/50 bg-neutral-900 dark:bg-slate-100 text-white dark:text-slate-900 text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2"
         >
           <NuxtLink to="/" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               Home
@@ -18,7 +18,7 @@
           <div class="w-px h-9 bg-white opacity-70"></div>
           <NuxtLink to="/about_me" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               About me
@@ -32,7 +32,7 @@
           </ClientOnly>
           <NuxtLink to="/projects" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               Projects
@@ -41,7 +41,7 @@
           <div class="w-px h-9 bg-white opacity-70"></div>
           <NuxtLink to="/contact" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               Contact
