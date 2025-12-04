@@ -1,15 +1,17 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="min-h-screen flex flex-col bg-primary">
+  <div
+    class="min-h-screen flex flex-col bg-white dark:bg-slate-900 transition-colors duration-300"
+  >
     <header>
       <div class="flex flex-row justify-center">
         <nav
-          class="sticky top-0 mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium my-5 rounded-xl shadow-xl shadow-orange-300/50 dark:shadow-purple-500/50 bg-neutral-900 dark:bg-slate-100 text-white dark:text-slate-900 text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2"
+          class="sticky top-0 mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium my-5 rounded-xl shadow-xl shadow-orange-300/50 dark:shadow-purple-500/30 bg-slate-900 dark:bg-slate-950 text-white text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
         >
           <NuxtLink to="/" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               Home
@@ -18,7 +20,7 @@
           <div class="w-px h-9 bg-white opacity-70"></div>
           <NuxtLink to="/about_me" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               About me
@@ -32,7 +34,7 @@
           </ClientOnly>
           <NuxtLink to="/projects" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               Projects
@@ -41,12 +43,15 @@
           <div class="w-px h-9 bg-white opacity-70"></div>
           <NuxtLink to="/contact" v-slot="{ isActive }">
             <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               :class="isActive ? 'after:w-full' : ''"
             >
               Contact
             </span>
           </NuxtLink>
+          <ClientOnly>
+            <ThemeToggle />
+          </ClientOnly>
         </nav>
       </div>
     </header>
@@ -55,7 +60,9 @@
       <slot />
     </main>
 
-    <footer class="bg-secondary text-center text-black p-3 sm:p-5 mt-auto">
+    <footer
+      class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 p-3 sm:p-5 mt-auto transition-colors duration-300"
+    >
       <div
         class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center text-sm sm:text-base"
       >
@@ -66,11 +73,13 @@
           <p class="whitespace-nowrap">Website created by</p>
           <div class="flex items-center gap-1">
             <p
-              class="bg-logo-light-primary rounded-full px-2 whitespace-nowrap"
+              class="bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 rounded-full px-2 whitespace-nowrap text-white transition-all duration-300"
             >
               Nicolás
             </p>
-            <p class="bg-logo-light-secondary px-2 whitespace-nowrap">
+            <p
+              class="bg-gradient-to-r from-orange-500 to-orange-400 dark:from-purple-500 dark:to-purple-400 px-2 whitespace-nowrap text-white transition-all duration-300"
+            >
               Carmona
             </p>
           </div>
@@ -79,7 +88,11 @@
           <div
             class="flex flex-row gap-3 md:gap-1 flex-wrap justify-center items-center"
           >
-            <a href="https://github.com/ncarmona99" target="_blank">
+            <a
+              href="https://github.com/ncarmona99"
+              target="_blank"
+              class="opacity-80 hover:opacity-100 transition-opacity"
+            >
               <span
                 ><svg
                   width="30"
@@ -87,6 +100,7 @@
                   viewBox="0 0 201 201"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  class="dark:invert transition-all duration-300"
                 >
                   <g clip-path="url(#clip0_106_2269)">
                     <path
@@ -108,7 +122,11 @@
                   </defs>
                 </svg> </span
             ></a>
-            <a href="https://wa.me/56951974512" target="_blank">
+            <a
+              href="https://wa.me/56951974512"
+              target="_blank"
+              class="opacity-80 hover:opacity-100 transition-opacity"
+            >
               <span
                 ><svg
                   width="30"
@@ -116,6 +134,7 @@
                   viewBox="0 0 201 201"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  class="dark:invert transition-all duration-300"
                 >
                   <path
                     d="M100.953 200.473H100.513C45.4953 200.473 0.733398 155.698 0.733398 100.664V100.224C0.733398 45.1893 45.4953 0.414307 100.513 0.414307H100.953C155.972 0.414307 200.733 45.1893 200.733 100.224V100.664C200.733 155.698 155.972 200.473 100.953 200.473ZM100.513 7.18609C49.2254 7.18609 7.50319 48.9205 7.50319 100.224V100.664C7.50319 151.967 49.2254 193.701 100.513 193.701H100.953C152.241 193.701 193.964 151.967 193.964 100.664V100.224C193.964 48.9205 152.241 7.18609 100.953 7.18609H100.513Z"
@@ -134,6 +153,7 @@
             <a
               href="https://www.linkedin.com/in/nicolas-carmona-rioseco/"
               target="_blank"
+              class="opacity-80 hover:opacity-100 transition-opacity"
               ><span
                 ><svg
                   width="30"
@@ -141,6 +161,7 @@
                   viewBox="0 0 201 201"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  class="dark:invert transition-all duration-300"
                 >
                   <path
                     d="M100.559 200.304H100.119C45.1008 200.304 0.338867 155.528 0.338867 100.494V100.054C0.338867 45.0197 45.1008 0.244629 100.119 0.244629H100.559C155.577 0.244629 200.339 45.0197 200.339 100.054V100.494C200.339 155.528 155.577 200.304 100.559 200.304ZM100.119 7.01641C48.831 7.01641 7.10866 48.751 7.10866 100.054V100.494C7.10866 151.797 48.831 193.532 100.119 193.532H100.559C151.847 193.532 193.569 151.797 193.569 100.494V100.054C193.569 48.751 151.847 7.01641 100.559 7.01641H100.119Z"
@@ -157,7 +178,9 @@
                 </svg>
               </span>
             </a>
-            <a href="mailto:contacto@ncarmona.cl"
+            <a
+              href="mailto:contacto@ncarmona.cl"
+              class="opacity-80 hover:opacity-100 transition-opacity"
               ><span>
                 <svg
                   id="Layer_1"
@@ -166,6 +189,7 @@
                   width="30"
                   height="30"
                   viewBox="0 0 125 125"
+                  class="dark:invert transition-all duration-300"
                 >
                   <title>email-round-line-color</title>
                   <path
