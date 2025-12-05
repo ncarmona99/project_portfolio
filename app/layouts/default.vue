@@ -69,12 +69,12 @@
           <p class="whitespace-nowrap">Website created by</p>
           <div class="flex items-center gap-1">
             <p
-              class="bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 rounded-full px-2 whitespace-nowrap text-white transition-all duration-300"
+              class="bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 rounded-full px-2 whitespace-nowrap text-white transition-colors duration-300"
             >
               Nicolás
             </p>
             <p
-              class="bg-gradient-to-r from-orange-500 to-orange-400 dark:from-purple-500 dark:to-purple-400 px-2 whitespace-nowrap text-white transition-all duration-300"
+              class="bg-gradient-to-r from-orange-500 to-orange-400 dark:from-purple-500 dark:to-purple-400 px-2 whitespace-nowrap text-white transition-colors duration-300"
             >
               Carmona
             </p>
