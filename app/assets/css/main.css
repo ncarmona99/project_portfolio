@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
-@layer components {
+@theme {
+  --color-primary: #ff6d00;
+  --color-secondary: #ff9100;
+  --color-primary-dark: #240046;
+  --color-secondary-dark: #5a199b;
+}
+
+@layer base {
   :root {
     --logo-color-primary: #ff6d00;
     --logo-color-secondary: #ff9100;

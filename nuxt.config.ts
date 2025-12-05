@@ -1,12 +1,7 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: false },
   srcDir: "app",
-  modules: ["@nuxtjs/color-mode"],
-  colorMode: {
-    classSuffix: "",
-  },
   app: {
     head: {
       titleTemplate: "%s - Nicolás Carmona portfolio",

@@ -49,9 +49,7 @@
               Contact
             </span>
           </NuxtLink>
-          <ClientOnly>
-            <ThemeToggle />
-          </ClientOnly>
+          <ClientOnly></ClientOnly>
         </nav>
       </div>
     </header>
