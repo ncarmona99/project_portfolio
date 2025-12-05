@@ -4,54 +4,52 @@
   <div
     class="min-h-screen flex flex-col bg-white dark:bg-slate-900 transition-colors duration-300"
   >
-    <header>
-      <div class="flex flex-row justify-center">
-        <nav
-          class="sticky top-0 mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium my-5 rounded-xl shadow-xl shadow-orange-300/50 dark:shadow-purple-500/30 bg-slate-900 dark:bg-slate-950 text-white text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
-        >
-          <NuxtLink to="/" v-slot="{ isActive }">
-            <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-              :class="isActive ? 'after:w-full' : ''"
-            >
-              Home
-            </span>
-          </NuxtLink>
+    <header class="sticky top-0 z-50">
+      <nav
+        class="mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium shadow-xl shadow-orange-300/50 dark:shadow-purple-500/30 bg-slate-900 dark:bg-slate-950 text-white text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
+      >
+        <NuxtLink to="/" v-slot="{ isActive }">
+          <span
+            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+            :class="isActive ? 'after:w-full' : ''"
+          >
+            Home
+          </span>
+        </NuxtLink>
+        <div class="w-px h-9 bg-white opacity-70"></div>
+        <NuxtLink to="/about_me" v-slot="{ isActive }">
+          <span
+            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+            :class="isActive ? 'after:w-full' : ''"
+          >
+            About me
+          </span>
+        </NuxtLink>
+        <div class="block lg:hidden">
           <div class="w-px h-9 bg-white opacity-70"></div>
-          <NuxtLink to="/about_me" v-slot="{ isActive }">
-            <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-              :class="isActive ? 'after:w-full' : ''"
-            >
-              About me
-            </span>
-          </NuxtLink>
-          <div class="block lg:hidden">
-            <div class="w-px h-9 bg-white opacity-70"></div>
-          </div>
-          <ClientOnly>
-            <div class="hidden lg:block"><AnimatedLogo /></div>
-          </ClientOnly>
-          <NuxtLink to="/projects" v-slot="{ isActive }">
-            <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-              :class="isActive ? 'after:w-full' : ''"
-            >
-              Projects
-            </span>
-          </NuxtLink>
-          <div class="w-px h-9 bg-white opacity-70"></div>
-          <NuxtLink to="/contact" v-slot="{ isActive }">
-            <span
-              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-              :class="isActive ? 'after:w-full' : ''"
-            >
-              Contact
-            </span>
-          </NuxtLink>
-          <ClientOnly></ClientOnly>
-        </nav>
-      </div>
+        </div>
+        <ClientOnly>
+          <div class="hidden lg:block"><AnimatedLogo /></div>
+        </ClientOnly>
+        <NuxtLink to="/projects" v-slot="{ isActive }">
+          <span
+            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+            :class="isActive ? 'after:w-full' : ''"
+          >
+            Projects
+          </span>
+        </NuxtLink>
+        <div class="w-px h-9 bg-white opacity-70"></div>
+        <NuxtLink to="/contact" v-slot="{ isActive }">
+          <span
+            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+            :class="isActive ? 'after:w-full' : ''"
+          >
+            Contact
+          </span>
+        </NuxtLink>
+        <ClientOnly><ThemeToggle /></ClientOnly>
+      </nav>
     </header>
 
     <main>
