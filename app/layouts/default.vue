@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const isScrolled = ref(false);
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 100;
+};
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+</script>
 
 <template>
   <div
@@ -6,7 +17,7 @@
   >
     <header class="sticky top-0 z-50">
       <nav
-        class="mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium shadow-xl shadow-orange-300/50 dark:shadow-purple-500/30 bg-slate-900 dark:bg-slate-950 text-white text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
+        class="mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium shadow-lg shadow-orange-200/40 dark:shadow-purple-900/50 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
       >
         <NuxtLink to="/" v-slot="{ isActive }">
           <span
@@ -16,7 +27,7 @@
             Home
           </span>
         </NuxtLink>
-        <div class="w-px h-9 bg-white opacity-70"></div>
+        <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
         <NuxtLink to="/about_me" v-slot="{ isActive }">
           <span
             class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
@@ -26,7 +37,7 @@
           </span>
         </NuxtLink>
         <div class="block lg:hidden">
-          <div class="w-px h-9 bg-white opacity-70"></div>
+          <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
         </div>
         <ClientOnly>
           <div class="hidden lg:block"><AnimatedLogo /></div>
@@ -39,7 +50,7 @@
             Projects
           </span>
         </NuxtLink>
-        <div class="w-px h-9 bg-white opacity-70"></div>
+        <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
         <NuxtLink to="/contact" v-slot="{ isActive }">
           <span
             class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
