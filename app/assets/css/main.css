@@ -5,8 +5,8 @@
 @theme {
   --color-primary: #ff6d00;
   --color-secondary: #ff9100;
-  --color-primary-dark: #240046;
-  --color-secondary-dark: #5a199b;
+  --color-primary-dark: #7e22ce;
+  --color-secondary-dark: #a855f7;
 }
 
 @layer base {
@@ -20,8 +20,8 @@
     --button-accent: #ff6d00;
   }
   .dark {
-    --logo-color-primary: #240046;
-    --logo-color-secondary: #5a199b;
+    --logo-color-primary: #a855f7;
+    --logo-color-secondary: #b78ef5;
     --bg-color-primary: #313131;
     --bg-color-secondary: #646464;
     --nav-text-color: #66049e;
@@ -105,6 +105,18 @@
     fill: var(--logo-color-primary);
   }
   .logo-light-secondary {
+    fill: var(--logo-color-secondary);
+  }
+  .fill-primary {
+    fill: var(--logo-color-primary);
+  }
+  .fill-secondary {
+    fill: var(--logo-color-secondary);
+  }
+  .fill-primary-dark {
+    fill: var(--logo-color-primary);
+  }
+  .fill-secondary-dark {
     fill: var(--logo-color-secondary);
   }
   .bg-primary {
