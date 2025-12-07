@@ -12,7 +12,7 @@ definePageMeta({
       <h1
         class="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-4 transition-colors duration-300"
       >
-        Contact Me
+        {{ $t("contact.title") }}
       </h1>
       <div
         class="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 transition-all duration-300"
@@ -20,8 +20,7 @@ definePageMeta({
       <p
         class="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto transition-colors duration-300"
       >
-        Let’s bring your ideas to life — get in touch with me and I guarantee a friendly
-        experience and real results.
+        {{ $t("contact.sub-title") }}
       </p>
     </div>
 
@@ -33,7 +32,7 @@ definePageMeta({
         <h2
           class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 transition-colors duration-300"
         >
-          Send me a message
+          {{ $t("contact.form_title") }}
         </h2>
 
         <form class="space-y-4">
@@ -42,12 +41,12 @@ definePageMeta({
               for="name"
               class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors duration-300"
             >
-              Name
+              {{ $t("contact.form_name") }}
             </label>
             <input
               type="text"
               id="name"
-              placeholder="Your name"
+              :placeholder="$t('contact.form_name_placeholder')"
               class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none transition-all duration-300"
             />
           </div>
@@ -57,12 +56,12 @@ definePageMeta({
               for="email"
               class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors duration-300"
             >
-              Email
+              {{ $t("contact.form_email") }}
             </label>
             <input
               type="email"
               id="email"
-              placeholder="your@email.com"
+              :placeholder="$t('contact.form_email_placeholder')"
               class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none transition-all duration-300"
             />
           </div>
@@ -72,12 +71,12 @@ definePageMeta({
               for="subject"
               class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors duration-300"
             >
-              Subject
+              {{ $t("contact.form_subject") }}
             </label>
             <input
               type="text"
               id="subject"
-              placeholder="Subject of the message"
+              :placeholder="$t('contact.form_subject_placeholder')"
               class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none transition-all duration-300"
             />
           </div>
@@ -87,12 +86,12 @@ definePageMeta({
               for="message"
               class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors duration-300"
             >
-              Message
+              {{ $t("contact.form_message") }}
             </label>
             <textarea
               id="message"
               rows="5"
-              placeholder="Write your message here..."
+              :placeholder="$t('contact.form_message_placeholder')"
               class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none resize-none transition-all duration-300"
             ></textarea>
           </div>
@@ -101,7 +100,7 @@ definePageMeta({
             type="submit"
             class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-colors duration-300 hover:scale-105 hover:shadow-lg"
           >
-            Send Message
+            {{ $t("contact.form_button") }}
           </button>
         </form>
       </div>
@@ -131,7 +130,7 @@ definePageMeta({
           <h3
             class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Email
+            {{ $t("contact.email_card_title") }}
           </h3>
           <a
             href="mailto:contacto@ncarmona.cl"
@@ -178,7 +177,7 @@ definePageMeta({
           <h3
             class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Phone / WhatsApp
+            {{ $t("contact.phone_card_title") }}
           </h3>
           <a
             href="tel:+56951974512"
@@ -212,7 +211,7 @@ definePageMeta({
           <h3
             class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 transition-colors duration-300"
           >
-            Social media
+            {{ $t("contact.social_card_title") }}
           </h3>
           <div class="flex gap-3">
             <a

@@ -8,47 +8,63 @@
       <nav
         class="mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium shadow-lg shadow-orange-200/40 dark:shadow-purple-900/50 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
       >
-        <NuxtLink to="/" v-slot="{ isActive }">
-          <span
-            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-            :class="isActive ? 'after:w-full' : ''"
-          >
-            Home
-          </span>
-        </NuxtLink>
-        <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
-        <NuxtLink to="/about_me" v-slot="{ isActive }">
-          <span
-            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-            :class="isActive ? 'after:w-full' : ''"
-          >
-            About me
-          </span>
-        </NuxtLink>
-        <div class="block lg:hidden">
+        <div
+          class="flex items-center gap-x-2 sm:gap-x-3 md:gap-x-4 flex-wrap justify-center"
+        >
+          <NuxtLink to="/" v-slot="{ isActive }">
+            <span
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              :class="isActive ? 'after:w-full' : ''"
+            >
+              {{ $t("navbar.home") }}
+            </span>
+          </NuxtLink>
           <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
+          <NuxtLink to="/about_me" v-slot="{ isActive }">
+            <span
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              :class="isActive ? 'after:w-full' : ''"
+            >
+              {{ $t("navbar.about") }}
+            </span>
+          </NuxtLink>
+          <div class="block lg:hidden">
+            <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
+          </div>
+          <ClientOnly>
+            <div class="hidden lg:block"><AnimatedLogo /></div>
+          </ClientOnly>
+          <NuxtLink to="/projects" v-slot="{ isActive }">
+            <span
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              :class="isActive ? 'after:w-full' : ''"
+            >
+              {{ $t("navbar.projects") }}
+            </span>
+          </NuxtLink>
+          <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
+          <NuxtLink to="/contact" v-slot="{ isActive }">
+            <span
+              class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+              :class="isActive ? 'after:w-full' : ''"
+            >
+              {{ $t("navbar.contact") }}
+            </span>
+          </NuxtLink>
         </div>
+
+        <div
+          class="w-full h-px bg-slate-300 dark:bg-slate-700 md:hidden opacity-70"
+        ></div>
+
         <ClientOnly>
-          <div class="hidden lg:block"><AnimatedLogo /></div>
+          <div
+            class="fixed bottom-4 right-4 z-50 md:fixed md:bottom-auto md:right-auto md:absolute md:right-3 md:top-1/2 md:-translate-y-1/2 flex items-center gap-2 sm:gap-3 bg-white/80 dark:bg-slate-900/70 backdrop-blur-sm md:bg-transparent md:backdrop-blur-0 px-2 py-2 md:px-0 md:py-0 rounded-full md:rounded-none shadow-md md:shadow-none"
+          >
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </ClientOnly>
-        <NuxtLink to="/projects" v-slot="{ isActive }">
-          <span
-            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-            :class="isActive ? 'after:w-full' : ''"
-          >
-            Projects
-          </span>
-        </NuxtLink>
-        <div class="w-px h-9 bg-slate-300 dark:bg-slate-700 opacity-70"></div>
-        <NuxtLink to="/contact" v-slot="{ isActive }">
-          <span
-            class="relative inline-block px-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 dark:after:bg-purple-400 after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-            :class="isActive ? 'after:w-full' : ''"
-          >
-            Contact
-          </span>
-        </NuxtLink>
-        <ClientOnly><ThemeToggle /></ClientOnly>
       </nav>
     </header>
 
@@ -64,7 +80,7 @@
       >
         <p class="order-1">© {{ new Date().getFullYear() }} Nicolás Carmona</p>
         <div class="flex justify-center items-center flex-wrap gap-1 order-3 md:order-2">
-          <p class="whitespace-nowrap">Website created by</p>
+          <p class="whitespace-nowrap">{{ $t("footer.website") }}</p>
           <div class="flex items-center gap-1">
             <p
               class="bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 rounded-full px-2 whitespace-nowrap text-white transition-colors duration-300"

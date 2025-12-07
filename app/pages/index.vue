@@ -14,17 +14,17 @@ definePageMeta({
         <h1
           class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-6 transition-colors duration-300"
         >
-          Hi!, Nicolás Carmona here
+          {{ $t("home.greeting") }}
         </h1>
 
         <p
           class="text-slate-600 dark:text-slate-300 text-lg md:text-xl mb-8 leading-relaxed transition-colors duration-300"
         >
-          I'm a
-          <span class="font-semibold text-orange-600 dark:text-purple-400"
-            >fullstack developer</span
-          >, passionate about technology, innovation projects and Beautiful UIs. You're
-          cordially invited to explore my portfolio and get in touch with me!
+          {{ $t("home.greeting_description_1") }}
+          <span class="font-semibold text-orange-600 dark:text-purple-400">{{
+            $t("home.greeting_description_2")
+          }}</span
+          >{{ $t("home.greeting_description_3") }}
         </p>
 
         <div class="flex flex-wrap gap-4">
@@ -32,14 +32,14 @@ definePageMeta({
             to="/projects"
             class="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-colors duration-300 hover:scale-105 hover:shadow-lg"
           >
-            See projects
+            {{ $t("home.b_see") }}
           </NuxtLink>
 
           <NuxtLink
             to="/contact"
             class="px-6 py-3 rounded-xl border-2 border-slate-300 dark:border-slate-700 font-medium text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-orange-500 dark:hover:border-purple-500 transition-all duration-300"
           >
-            Contact
+            {{ $t("home.b_contact") }}
           </NuxtLink>
         </div>
 
@@ -155,7 +155,7 @@ definePageMeta({
       <h2
         class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8 text-center transition-colors duration-300"
       >
-        My specialties
+        {{ $t("home.title_1") }}
       </h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
@@ -197,12 +197,12 @@ definePageMeta({
           <h3
             class="font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Frontend
+            {{ $t("home.sub_1") }}
           </h3>
           <p
             class="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300"
           >
-            [Vue, Nuxt, Angular]
+            {{ $t("home.desc_1") }}
           </p>
         </div>
 
@@ -225,12 +225,12 @@ definePageMeta({
           <h3
             class="font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Backend
+            {{ $t("home.sub_2") }}
           </h3>
           <p
             class="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300"
           >
-            [Node.js, Python]
+            {{ $t("home.desc_2") }}
           </p>
         </div>
 
@@ -257,12 +257,12 @@ definePageMeta({
           <h3
             class="font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Databases
+            {{ $t("home.sub_3") }}
           </h3>
           <p
             class="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300"
           >
-            [PostgreSQL, MySQL, Oracle]
+            {{ $t("home.desc_3") }}
           </p>
         </div>
 
@@ -293,12 +293,12 @@ definePageMeta({
           <h3
             class="font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            UI/UX Design
+            {{ $t("home.sub_4") }}
           </h3>
           <p
             class="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300"
           >
-            [Figma, Tailwind, Bootstrap]
+            {{ $t("home.desc_4") }}
           </p>
         </div>
       </div>
@@ -311,18 +311,18 @@ definePageMeta({
       <h2
         class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4 transition-colors duration-300"
       >
-        ¿Ready to work together?
+        {{ $t("home.call_title") }}
       </h2>
       <p
         class="text-slate-600 dark:text-slate-300 mb-8 text-lg transition-colors duration-300"
       >
-        I am available for new projects and collaborations
+        {{ $t("home.call_subtitle") }}
       </p>
       <NuxtLink
         to="/contact"
         class="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
       >
-        Let's talk →
+        {{ $t("home.b_call") }}
       </NuxtLink>
     </div>
   </section>

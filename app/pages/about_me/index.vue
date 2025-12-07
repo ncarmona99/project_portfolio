@@ -12,7 +12,7 @@ definePageMeta({
       <h1
         class="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-4 transition-colors duration-300"
       >
-        About Me
+        {{ $t("about.title") }}
       </h1>
       <div
         class="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 transition-all duration-300"
@@ -35,30 +35,22 @@ definePageMeta({
         <h2
           class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4 transition-colors duration-300"
         >
-          Nicolás Carmona Rioseco
+          {{ $t("about.sub_title") }}
         </h2>
         <p
           class="text-xl mb-4 font-semibold text-orange-600 dark:text-purple-400 transition-colors duration-300"
         >
-          System Analyst & programmer
+          {{ $t("about.sub_title2") }}
         </p>
         <p
           class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-4 transition-colors duration-300"
         >
-          I’m someone who loves technology, challenges, and continuous learning. I first
-          embarked on an academic journey in Law at Pontificia Universidad Católica de
-          Valparaíso, but sooner rather than later I discovered my true passion:
-          programming. I left my Law degree to fully dedicate myself to the world of
-          technology, while still carrying with me the invaluable skills I gained from my
-          original field of study.
+          {{ $t("about.description") }}
         </p>
         <p
           class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed transition-colors duration-300"
         >
-          After graduating as a Systems Analyst and Programmer from DuocUC, I immediately
-          set out to broaden my horizons. I began —and am currently in the process of—
-          studying for a degree in Cybersecurity Engineering and IT Auditing at San
-          Sebastián University, which will make me an even more well-rounded professional.
+          {{ $t("about.description2") }}
         </p>
       </div>
     </div>
@@ -135,7 +127,7 @@ definePageMeta({
       <h2
         class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8 text-center transition-colors duration-300"
       >
-        Formal Experience
+        {{ $t("about.sub_title3") }}
       </h2>
       <div class="max-w-3xl mx-auto space-y-8">
         <!-- Timeline Item 1 -->
@@ -149,26 +141,23 @@ definePageMeta({
             <span
               class="text-sm font-semibold px-3 py-1 rounded-full text-white bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 transition-all duration-300"
             >
-              July 2024 - December 2025
+              {{ $t("about.date1") }}
             </span>
           </div>
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mt-2 transition-colors duration-300"
           >
-            TI Specialist
+            {{ $t("about.role1") }}
           </h3>
           <p
             class="text-slate-600 dark:text-slate-300 font-medium transition-colors duration-300"
           >
-            Importadora Eco S.A.
+            {{ $t("about.company1") }}
           </p>
           <p
             class="text-slate-600 dark:text-slate-400 mt-2 transition-colors duration-300"
           >
-            Responsible for managing and maintaining the company's IT infrastructure,
-            ensuring optimal performance and security across all systems. I implemented a
-            WMS module for Sales Order consolidation with an administrative layer. I also
-            developed and modernized the company's corporate website from the ground up.
+            {{ $t("about.desc1") }}
           </p>
         </div>
 
@@ -183,27 +172,23 @@ definePageMeta({
             <span
               class="text-sm font-semibold px-3 py-1 rounded-full text-white bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 transition-all duration-300"
             >
-              December 2024 - Today
+              {{ $t("about.date2") }}
             </span>
           </div>
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mt-2 transition-colors duration-300"
           >
-            Freelance Developer
+            {{ $t("about.role2") }}
           </h3>
           <p
             class="text-slate-600 dark:text-slate-300 font-medium transition-colors duration-300"
           >
-            Nicolás Carmona
+            {{ $t("about.company2") }}
           </p>
           <p
             class="text-slate-600 dark:text-slate-400 mt-2 transition-colors duration-300"
           >
-            Offering web development services to small and medium-sized businesses,
-            specializing in creating responsive and user-friendly websites using modern
-            technologies such as Vue.js and Nuxt.js. I developed a self-managed catalog
-            for Librería La Paloma 'catalogo.librerialapaloma.cl', and a website for the
-            German Charity of Valparaíso 'www.benevalpo.cl'
+            {{ $t("about.desc2") }}
           </p>
         </div>
       </div>
@@ -214,7 +199,7 @@ definePageMeta({
       <h2
         class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8 text-center transition-colors duration-300"
       >
-        Education
+        {{ $t("about.sub_title4") }}
       </h2>
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         <!-- Education Card 1 -->
@@ -238,17 +223,17 @@ definePageMeta({
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-1 transition-colors duration-300"
           >
-            Software Analyst and Programmer
+            {{ $t("about.degree1") }}
           </h3>
           <p
             class="font-medium mb-2 text-orange-600 dark:text-purple-400 transition-colors duration-300"
           >
-            Duoc UC
+            {{ $t("about.institution1") }}
           </p>
           <p
             class="text-slate-600 dark:text-slate-300 text-sm transition-colors duration-300"
           >
-            2025
+            {{ $t("about.year1") }}
           </p>
         </div>
 
@@ -273,17 +258,17 @@ definePageMeta({
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-1 transition-colors duration-300"
           >
-            Studying Cybersecurity Engineering and IT Auditing
+            {{ $t("about.degree2") }}
           </h3>
           <p
             class="font-medium mb-2 text-orange-600 dark:text-purple-400 transition-colors duration-300"
           >
-            San Sebastián University
+            {{ $t("about.institution2") }}
           </p>
           <p
             class="text-slate-600 dark:text-slate-300 text-sm transition-colors duration-300"
           >
-            2027
+            {{ $t("about.year2") }}
           </p>
         </div>
       </div>
@@ -293,23 +278,22 @@ definePageMeta({
     <div
       class="text-center py-12 px-6 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 transition-all duration-300"
     >
-      <h2 class="text-3xl font-bold text-white mb-4">Let's Work Together</h2>
+      <h2 class="text-3xl font-bold text-white mb-4">{{ $t("about.call_title") }}</h2>
       <p class="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-        Let’s connect — whether you’re looking to strengthen your development team or
-        start building your next software project, I’d be excited to collaborate.
+        {{ $t("about.call_subtitle") }}
       </p>
       <div class="flex gap-4 justify-center flex-wrap">
         <NuxtLink
           to="/projects"
           class="px-8 py-3 rounded-xl bg-white text-orange-600 dark:text-purple-600 font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
-          See projects
+          {{ $t("about.b_projects") }}
         </NuxtLink>
         <NuxtLink
           to="/contact"
           class="px-8 py-3 rounded-xl border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white hover:text-orange-600 dark:hover:text-purple-600 hover:scale-105"
         >
-          Contact
+          {{ $t("about.b_contact") }}
         </NuxtLink>
       </div>
     </div>

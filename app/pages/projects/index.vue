@@ -12,7 +12,7 @@ definePageMeta({
       <h1
         class="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-4 transition-colors duration-300"
       >
-        Projects
+        {{ $t("projects.title") }}
       </h1>
       <div
         class="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 transition-all duration-300"
@@ -20,12 +20,12 @@ definePageMeta({
       <p
         class="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto transition-colors duration-300"
       >
-        These are my projects currently deployed in
+        {{ $t("projects.sub_title1") }}
         <span
           class="text-primary dark:text-primary-dark font-bold transition-colors duration-300"
-          >production</span
+          >{{ $t("projects.span") }}</span
         >
-        environments. You can explore them freely.
+        {{ $t("projects.sub_title2") }}
       </p>
     </div>
 
@@ -54,10 +54,7 @@ definePageMeta({
           <p
             class="text-slate-600 dark:text-slate-300 mb-4 transition-colors duration-300"
           >
-            WMS module project for order consolidation in packaging, featuring barcode
-            detection and integrated use of a handheld scanner. Built and developed with
-            Vue.js; PostgreSQL and MySQL databases; Node.js backend; deployed on a local
-            Linux CentOS server.
+            {{ $t("projects.card_desc1") }}
           </p>
 
           <!-- Tags -->
@@ -111,15 +108,12 @@ definePageMeta({
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Catalog for Librería La Paloma
+            {{ $t("projects.card_title2") }}
           </h3>
           <p
             class="text-slate-600 dark:text-slate-300 mb-4 transition-colors duration-300"
           >
-            Self-managed catalog created for the company “Librería La Paloma.” It includes
-            user management, product linking with the sales system's database, and a
-            general admin panel. Developed in Vue.js with a PostgreSQL database and a
-            Node.js backend.
+            {{ $t("projects.card_desc2") }}
           </p>
 
           <div class="flex flex-wrap gap-2 mb-4">
@@ -171,14 +165,12 @@ definePageMeta({
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Website for Benevalpo
+            {{ $t("projects.card_title3") }}
           </h3>
           <p
             class="text-slate-600 dark:text-slate-300 mb-4 transition-colors duration-300"
           >
-            Website for Benevalpo, a project that involved creating a responsive and
-            user-friendly website using PHP and PHPMailer for contact form functionality.
-            Also, this project modernized the old members registration form.
+            {{ $t("projects.card_desc3") }}
           </p>
 
           <div class="flex flex-wrap gap-2 mb-4">
@@ -197,7 +189,7 @@ definePageMeta({
               href="www.benevalpo.cl"
               class="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-all duration-300 hover:scale-105"
             >
-              Website
+              {{ $t("projects.b_website") }}
             </a>
             <a
               href="https://github.com/ncarmona99/benevalpo"
@@ -226,14 +218,12 @@ definePageMeta({
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Website for Importadora Eco S.A.
+            {{ $t("projects.card_title4") }}
           </h3>
           <p
             class="text-slate-600 dark:text-slate-300 mb-4 transition-colors duration-300"
           >
-            Website for EcoSA, a project that involved creating a responsive and
-            user-friendly website using PHP and PHPMailer for contact form functionality.
-            This replaced their old static HTML site with a modern design.
+            {{ $t("projects.card_desc4") }}
           </p>
 
           <div class="flex flex-wrap gap-2 mb-4">
@@ -252,7 +242,7 @@ definePageMeta({
               href="www.ecosa.cl"
               class="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-all duration-300 hover:scale-105"
             >
-              Website
+              {{ $t("projects.b_website") }}
             </a>
             <a
               href="#"
@@ -280,14 +270,12 @@ definePageMeta({
           <h3
             class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors duration-300"
           >
-            Nicolás Carmona Web Portfolio
+            {{ $t("projects.card_title5") }}
           </h3>
           <p
             class="text-slate-600 dark:text-slate-300 mb-4 transition-colors duration-300"
           >
-            My own web portfolio built with Nuxt.js and Tailwind CSS, showcasing my
-            skills, projects, and experience as a web developer. It features a dark mode
-            toggle, responsive design, and smooth animations.
+            {{ $t("projects.card_desc5") }}
           </p>
 
           <div class="flex flex-wrap gap-2 mb-4">
@@ -310,7 +298,7 @@ definePageMeta({
               href="www.ncarmona.cl"
               class="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-all duration-300 hover:scale-105"
             >
-              Website
+              {{ $t("projects.b_website") }}
             </a>
             <a
               href="https://github.com/ncarmona99/project_portfolio"
@@ -330,16 +318,16 @@ definePageMeta({
       <h2
         class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 transition-colors duration-300"
       >
-        Do you have a project in mind? Let's work together!
+        {{ $t("projects.cta_title") }}
       </h2>
       <p class="text-slate-600 dark:text-slate-300 mb-6 transition-colors duration-300">
-        I'm always available to talk about your ideas and help bring them to life.
+        {{ $t("projects.cta_subtitle") }}
       </p>
       <NuxtLink
         to="/contact"
         class="inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
       >
-        Contact Me
+        {{ $t("projects.b_contact") }}
       </NuxtLink>
     </div>
   </section>
