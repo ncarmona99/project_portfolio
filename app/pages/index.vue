@@ -95,7 +95,7 @@ definePageMeta({
       <div class="order-1 md:order-2">
         <div class="relative">
           <div
-            class="dark:bg-[url('/img/logo_dark_mode.png')] bg-[url('/img/logo_light_mode.png')] h-120 w-full bg-cover dark:h-120 dark:w-full dark:bg-cover transition-all duration-300"
+            class="dark:bg-[url('/img/logo_dark_mode.png')] bg-[url('/img/logo_light_mode.png')] h-120 w-full bg-cover dark:h-120 dark:w-full dark:bg-cover transition-all duration-300 hidden md:block"
           ></div>
         </div>
       </div>

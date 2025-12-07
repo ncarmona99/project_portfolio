@@ -25,7 +25,7 @@ definePageMeta({
       <div class="order-2 md:order-1">
         <div class="relative">
           <div
-            class="dark:bg-[url('/img/profile_photo_dark.png')] bg-[url('/img/profile_photo_light.png')] h-134 w-full bg-cover flex items-center justify-center transition-colors duration-300"
+            class="dark:bg-[url('/img/profile_photo_dark.png')] bg-[url('/img/profile_photo_light.png')] h-64 sm:h-96 md:h-[500px] lg:h-[600px] w-full bg-contain bg-center bg-no-repeat transition-colors duration-300"
           ></div>
         </div>
       </div>

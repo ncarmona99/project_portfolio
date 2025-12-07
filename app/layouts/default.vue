@@ -6,7 +6,7 @@
   >
     <header class="sticky top-0 z-50">
       <nav
-        class="mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium shadow-lg shadow-orange-200/40 dark:shadow-purple-900/50 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
+        class="relative w-full mx-auto items-center justify-center flex flex-row flex-wrap font-mono font-medium shadow-lg shadow-orange-200/40 dark:shadow-purple-900/50 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 text-base sm:text-lg md:text-2xl p-2 sm:p-3 md:p-4 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 transition-all duration-300"
       >
         <div
           class="flex items-center gap-x-2 sm:gap-x-3 md:gap-x-4 flex-wrap justify-center"
@@ -59,7 +59,7 @@
 
         <ClientOnly>
           <div
-            class="fixed bottom-4 right-4 z-50 md:fixed md:bottom-auto md:right-auto md:absolute md:right-3 md:top-1/2 md:-translate-y-1/2 flex items-center gap-2 sm:gap-3 bg-white/80 dark:bg-slate-900/70 backdrop-blur-sm md:bg-transparent md:backdrop-blur-0 px-2 py-2 md:px-0 md:py-0 rounded-full md:rounded-none shadow-md md:shadow-none"
+            class="hidden md:flex md:absolute md:right-6 md:top-1/2 md:-translate-y-1/2 items-center gap-2 sm:gap-3"
           >
             <LanguageToggle />
             <ThemeToggle />
@@ -71,6 +71,15 @@
     <main>
       <slot />
     </main>
+
+    <ClientOnly>
+      <div
+        class="md:hidden fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg"
+      >
+        <LanguageToggle />
+        <ThemeToggle />
+      </div>
+    </ClientOnly>
 
     <footer
       class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 p-3 sm:p-5 mt-auto transition-colors duration-300"
