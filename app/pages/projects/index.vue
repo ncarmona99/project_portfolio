@@ -83,6 +83,7 @@ definePageMeta({
             </a>
             <a
               href="https://github.com/ncarmona99/wmseco"
+              target="_blank"
               class="px-4 py-2 rounded-lg border-2 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-300"
             >
               GitHub
@@ -133,13 +134,15 @@ definePageMeta({
 
           <div class="flex gap-3">
             <a
-              href="#"
+              href="https://catalogo.librerialapaloma.cl/"
+              target="_blank"
               class="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-all duration-300 hover:scale-105"
             >
-              Demo
+              {{ $t("projects.b_website") }}
             </a>
             <a
               href="https://github.com/ncarmona99/frontend_catalogo_la_paloma"
+              target="_blank"
               class="px-4 py-2 rounded-lg border-2 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-300"
             >
               GitHub
@@ -186,13 +189,15 @@ definePageMeta({
 
           <div class="flex gap-3">
             <a
-              href="www.benevalpo.cl"
+              href="https://www.benevalpo.cl"
+              target="_blank"
               class="flex-1 text-center px-4 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-all duration-300 hover:scale-105"
             >
               {{ $t("projects.b_website") }}
             </a>
             <a
               href="https://github.com/ncarmona99/benevalpo"
+              target="_blank"
               class="px-4 py-2 rounded-lg border-2 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-300"
             >
               GitHub
