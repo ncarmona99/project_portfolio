@@ -63,9 +63,7 @@
         class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center text-sm sm:text-base"
       >
         <p class="order-1">© {{ new Date().getFullYear() }} Nicolás Carmona</p>
-        <div
-          class="flex justify-center items-center flex-wrap gap-1 order-3 md:order-2"
-        >
+        <div class="flex justify-center items-center flex-wrap gap-1 order-3 md:order-2">
           <p class="whitespace-nowrap">Website created by</p>
           <div class="flex items-center gap-1">
             <p
@@ -81,9 +79,7 @@
           </div>
         </div>
         <div class="flex justify-center order-2 md:order-3">
-          <div
-            class="flex flex-row gap-3 md:gap-1 flex-wrap justify-center items-center"
-          >
+          <div class="flex flex-row gap-3 md:gap-1 flex-wrap justify-center items-center">
             <a
               href="https://github.com/ncarmona99"
               target="_blank"
