@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale } = useI18n();
+const { locale, setLocale } = useI18n();
 </script>
 
 <template>
@@ -7,7 +7,7 @@ const { locale } = useI18n();
     class="flex items-center gap-1 bg-slate-200 dark:bg-slate-800 rounded-lg p-1 shadow-md"
   >
     <button
-      @click="locale = 'en'"
+      @click="setLocale('en')"
       :class="[
         'px-3 py-2 rounded font-mono font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-1 whitespace-nowrap',
         locale === 'en'
@@ -21,7 +21,7 @@ const { locale } = useI18n();
     </button>
 
     <button
-      @click="locale = 'es'"
+      @click="setLocale('es')"
       :class="[
         'px-3 py-2 rounded font-mono font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-1 whitespace-nowrap',
         locale === 'es'
