@@ -1,8 +1,54 @@
 <script setup lang="ts">
+import { useContactForm } from '~/composables/useContactForm'
+
 definePageMeta({
   title: "Contact me",
   description: "Contact me page",
 });
+
+const { formData, formState, errors, validateField, submitForm } = useContactForm()
+const { t } = useI18n()
+
+const handleSubmit = async (e: Event) => {
+  e.preventDefault()
+  await submitForm()
+}
+
+const getErrorMessage = (field: 'name' | 'email' | 'subject' | 'message'): string => {
+  if (!errors[field].value) return ''
+  
+  switch (errors[field].value) {
+    case 'required':
+      return t('contact.validation_required')
+    case 'invalid_email':
+      return t('contact.validation_invalid_email')
+    case 'name_too_short':
+      return t('contact.validation_name_too_short')
+    case 'message_too_short':
+      return t('contact.validation_message_too_short')
+    default:
+      return ''
+  }
+}
+
+const getApiErrorMessage = (errorCode: string): string => {
+  switch (errorCode) {
+    case 'missing_fields':
+      return t('contact.error_missing_fields')
+    case 'invalid_email':
+      return t('contact.validation_invalid_email')
+    case 'email_send_failed':
+      return t('contact.error_email_send_failed')
+    case 'recaptcha_failed':
+      return t('contact.error_recaptcha_failed')
+    case 'smtp_rate_limit':
+      return t('contact.error_smtp_rate_limit')
+    case 'smtp_auth_failed':
+      return t('contact.error_smtp_auth_failed')
+    default:
+      return t('contact.error_unknown')
+  }
+}
 </script>
 
 <template>
@@ -35,7 +81,67 @@ definePageMeta({
           {{ $t("contact.form_title") }}
         </h2>
 
-        <form class="space-y-4">
+        <!-- Success Message -->
+        <div
+          v-if="formState.isSuccess"
+          class="mb-6 p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border-2 border-green-500 dark:border-green-500/50"
+        >
+          <div class="flex items-start">
+            <svg
+              class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div>
+              <h3 class="font-bold text-green-800 dark:text-green-300 mb-1">
+                {{ $t("contact.success_title") }}
+              </h3>
+              <p class="text-green-700 dark:text-green-400 text-sm">
+                {{ $t("contact.success_message") }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div
+          v-if="formState.isError"
+          class="mb-6 p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border-2 border-red-500 dark:border-red-500/50"
+        >
+          <div class="flex items-start">
+            <svg
+              class="w-6 h-6 text-red-500 mr-3 flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div>
+              <h3 class="font-bold text-red-800 dark:text-red-300 mb-1">
+                {{ $t("contact.error_title") }}
+              </h3>
+              <p class="text-red-700 dark:text-red-400 text-sm">
+                {{ getApiErrorMessage(formState.errorMessage) }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form @submit="handleSubmit" class="space-y-4">
           <div>
             <label
               for="name"
@@ -46,9 +152,19 @@ definePageMeta({
             <input
               type="text"
               id="name"
+              v-model="formData.name"
+              @blur="validateField('name')"
               :placeholder="$t('contact.form_name_placeholder')"
-              class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none transition-all duration-300"
+              :class="[
+                'w-full px-4 py-3 rounded-lg border-2 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none transition-all duration-300',
+                errors.name.value
+                  ? 'border-red-500 focus:border-red-500'
+                  : 'border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-purple-500'
+              ]"
             />
+            <p v-if="errors.name.value" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getErrorMessage('name') }}
+            </p>
           </div>
 
           <div>
@@ -61,9 +177,19 @@ definePageMeta({
             <input
               type="email"
               id="email"
+              v-model="formData.email"
+              @blur="validateField('email')"
               :placeholder="$t('contact.form_email_placeholder')"
-              class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none transition-all duration-300"
+              :class="[
+                'w-full px-4 py-3 rounded-lg border-2 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none transition-all duration-300',
+                errors.email.value
+                  ? 'border-red-500 focus:border-red-500'
+                  : 'border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-purple-500'
+              ]"
             />
+            <p v-if="errors.email.value" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getErrorMessage('email') }}
+            </p>
           </div>
 
           <div>
@@ -76,9 +202,19 @@ definePageMeta({
             <input
               type="text"
               id="subject"
+              v-model="formData.subject"
+              @blur="validateField('subject')"
               :placeholder="$t('contact.form_subject_placeholder')"
-              class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none transition-all duration-300"
+              :class="[
+                'w-full px-4 py-3 rounded-lg border-2 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none transition-all duration-300',
+                errors.subject.value
+                  ? 'border-red-500 focus:border-red-500'
+                  : 'border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-purple-500'
+              ]"
             />
+            <p v-if="errors.subject.value" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getErrorMessage('subject') }}
+            </p>
           </div>
 
           <div>
@@ -91,17 +227,56 @@ definePageMeta({
             <textarea
               id="message"
               rows="5"
+              v-model="formData.message"
+              @blur="validateField('message')"
               :placeholder="$t('contact.form_message_placeholder')"
-              class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 dark:focus:border-purple-500 focus:outline-none resize-none transition-all duration-300"
+              :class="[
+                'w-full px-4 py-3 rounded-lg border-2 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none resize-none transition-all duration-300',
+                errors.message.value
+                  ? 'border-red-500 focus:border-red-500'
+                  : 'border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-purple-500'
+              ]"
             ></textarea>
+            <p v-if="errors.message.value" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getErrorMessage('message') }}
+            </p>
           </div>
 
           <button
             type="submit"
-            class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-colors duration-300 hover:scale-105 hover:shadow-lg"
+            :disabled="formState.isSubmitting"
+            class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 dark:from-purple-600 dark:to-purple-500 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
           >
-            {{ $t("contact.form_button") }}
+            <svg
+              v-if="formState.isSubmitting"
+              class="animate-spin h-5 w-5 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            {{ formState.isSubmitting ? $t("contact.form_button_sending") : $t("contact.form_button") }}
           </button>
+
+          <!-- reCAPTCHA Notice -->
+          <p class="mt-3 text-xs text-center text-slate-500 dark:text-slate-400">
+            This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline hover:text-orange-600 dark:hover:text-purple-400">Privacy Policy</a> and
+            <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline hover:text-orange-600 dark:hover:text-purple-400">Terms of Service</a> apply.
+          </p>
         </form>
       </div>
 

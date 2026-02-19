@@ -36,4 +36,19 @@ export default defineNuxtConfig({
       "@tailwindcss/postcss": {},
     },
   },
+
+  runtimeConfig: {
+    // Private keys (only available server-side)
+    smtpHost: process.env.NUXT_SMTP_HOST || '',
+    smtpPort: process.env.NUXT_SMTP_PORT || '587',
+    smtpUser: process.env.NUXT_SMTP_USER || '',
+    smtpPassword: process.env.NUXT_SMTP_PASSWORD || '',
+    contactEmail: process.env.NUXT_CONTACT_EMAIL || '',
+    recaptchaSecretKey: process.env.NUXT_RECAPTCHA_SECRET_KEY || '',
+    
+    // Public keys (available on both client and server)
+    public: {
+      recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
+    },
+  },
 });

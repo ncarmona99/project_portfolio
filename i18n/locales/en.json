@@ -78,10 +78,24 @@
         "form_message":"Message",
         "form_message_placeholder":"Write your message here...",
         "form_button":"Send Message",
+        "form_button_sending":"Sending...",
         "email_card_title":"Email",
         "phone_card_title":"Phone/WhatsApp",
-        "social_card_title":"Social Media"
-
+        "social_card_title":"Social Media",
+        "success_title":"Message sent successfully!",
+        "success_message":"Thank you for contacting me. I'll get back to you as soon as possible.",
+        "error_title":"Error sending message",
+        "error_message":"There was an error sending your message. Please try again or contact me directly via email.",
+        "validation_required":"This field is required",
+        "validation_invalid_email":"Please enter a valid email address",
+        "validation_name_too_short":"Name must be at least 2 characters",
+        "validation_message_too_short":"Message must be at least 10 characters",
+        "error_missing_fields":"Please fill in all required fields",
+        "error_email_send_failed":"Failed to send email. Please try again later.",
+        "error_unknown":"An unexpected error occurred. Please try again.",
+        "error_recaptcha_failed":"Anti-spam verification failed. Please refresh the page and try again.",
+        "error_smtp_rate_limit":"The email server is busy. Please wait a moment and try again.",
+        "error_smtp_auth_failed":"Email service configuration error. Please contact the site administrator."
     },
     "navbar":{
         "home":"Home",
